@@ -1,0 +1,15 @@
+.low-rate-comment {
+    background-color: cornsilk;
+}
+
+.medium-rate-comment {
+    background-color: khaki;
+}
+
+.high-rate-comment {
+    background-color: goldenrod;
+}
+
+a.list-group-item {
+    margin-top: 10px;
+}

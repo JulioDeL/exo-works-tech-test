@@ -1,0 +1,4 @@
+.md-form label.active {
+  font-size: 0.8rem;
+  transform: translateY(-140%);
+}

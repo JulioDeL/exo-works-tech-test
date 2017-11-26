@@ -1,0 +1,20 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Date Joined</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let consultant of consultants;trackBy:consultant?.id">
+      <td><span>{{consultant.full_name}}</span></td>
+      <td><span>{{consultant.date_joined | date}}</span></td>
+      <td><span>{{consultant.location}}</span></td>
+      <td><a class="text-primary" [routerLink]="['/comments', consultant.id]">View comments</a></td>
+    </tr>
+  </tbody>
+</table>
+  
+  

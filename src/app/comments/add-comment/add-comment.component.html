@@ -1,0 +1,46 @@
+<form (ngSubmit)="onSubmit(commentForm)" #commentForm="ngForm">
+  <p class="h5 text-center mb-4">Send a new comment</p>
+  <div class="md-form">
+    <input type="text" id="subject" name="subject" class="form-control" ngModel required #subjectField>
+    <label class="active" for="subject">Subject</label>
+    <div *ngIf="commentForm.submitted && !subjectField.valid" class="help-block text-danger">This field may not be blank</div>
+  </div>
+
+  <div class="md-form">
+    <textarea type="text" id="body" name="body" class="md-textarea" ngModel required #bodyField></textarea>
+    <label class="active" for="body">Body</label>
+    <div *ngIf="commentForm.submitted && !bodyField.valid" class="help-block text-danger">This field may not be blank</div>
+  </div>
+
+  <div class="md-form">
+    <select class="mdb-select form-control" id="status" name="status" ngModel required #statusField>
+      <option value="{{status.value}}" *ngFor="let status of commentStatuses;trackBy:status?.value">{{status.label}}</option>
+    </select>
+    <label class="active" for="status">Status</label>
+    <div *ngIf="commentForm.submitted && !statusField.valid" class="help-block text-danger">This field may not be blank</div>
+  </div>
+
+  <div class="md-form">
+    <input type="number" id="rating" name="rating" class="form-control" ngModel required #ratingField>
+    <label class="active" for="rating">Rating</label>
+    <div *ngIf="commentForm.submitted && !ratingField.valid" class="help-block text-danger">This field may not be blank</div>
+  </div>
+
+  <div class="md-form">
+    <input type="text" id="user" name="user" class="form-control" ngModel required #userField>
+    <label class="active" for="user">User</label>
+    <div *ngIf="commentForm.submitted && !userField.valid" class="help-block text-danger">This field may not be blank</div>
+  </div>
+
+  <div class="md-form">
+    <select class="mdb-select form-control" id="consultant" name="consultant" ngModel required #consultantField>
+      <option value="{{consultant.id}}" *ngFor="let consultant of consultants;trackBy:consultant?.id">{{consultant.full_name}}</option>
+    </select>
+    <label class="active" for="consultant">Consultant</label>
+    <div *ngIf="commentForm.submitted && !consultantField.valid" class="help-block text-danger">This field may not be blank</div>
+  </div>
+
+  <div class="text-center">
+    <button role="submit" class="btn btn-unique">Send</button>
+  </div>
+</form>
